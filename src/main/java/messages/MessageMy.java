@@ -1,6 +1,6 @@
 package messages;
 
-abstract class MessageMy {
+public abstract class MessageMy {
 
     public abstract String getMessageText();
 

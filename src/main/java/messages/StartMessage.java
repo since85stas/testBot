@@ -9,7 +9,8 @@ public class StartMessage extends MessageMy{
         builder.append("Привет, я компьютерный кот Беляш!");
         builder.append("\n");
         builder.append("Если хочешь поговорить, я всегда готов, вот какие команды я знаю:");
-
+        builder.append("\n");
+        builder.append("");
         return null;
     }
 }
