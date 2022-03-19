@@ -1,5 +1,7 @@
 package messages;
 
+import commands.Commands;
+
 public class StartMessage extends MessageMy{
 
 
@@ -11,6 +13,9 @@ public class StartMessage extends MessageMy{
         builder.append("Если хочешь поговорить, я всегда готов, вот какие команды я знаю:");
         builder.append("\n");
         builder.append("");
-        return null;
+
+        Commands commands = Commands.getInstance();
+        builder.append(commands.getCommandsDescrString());
+        return builder.toString();
     }
 }

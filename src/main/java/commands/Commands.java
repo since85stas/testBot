@@ -6,12 +6,23 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Commands {
+
+    private static Commands instance;
     
     private Map<String, MessageMy> commands = new TreeMap<>();
     
     private Map<String, String> commandsDescr = new TreeMap<>();
-    
-    Commands() {
+
+    public static Commands getInstance() {
+        if (instance == null) {
+            instance = new Commands();
+            return instance;
+        } else {
+            return instance;
+        }
+    }
+
+    private Commands() {
         addCommands();
     }
     
@@ -23,12 +34,15 @@ public class Commands {
         commandsDescr.put("\\беляу", "");
     }
     
-    public void getCommandsDescrString() {
+    public String  getCommandsDescrString() {
         StringBuilder builder = new StringBuilder();
         for (String c: commandsDescr.keySet()
              ) {
             builder.append(c).append(" - ").append(commandsDescr.get(c));
             builder.append("\n");
         }
+        return builder.toString();
     }
+
+
 }
