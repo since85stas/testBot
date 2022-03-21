@@ -1,6 +1,7 @@
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
@@ -14,6 +15,10 @@ public class MyAmazingBot extends TelegramLongPollingBot {
             SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
             message.setChatId(update.getMessage().getChatId().toString());
             message.setText("Мяууууу");
+
+            SendPhoto sendPhoto = new SendPhoto();
+            sendPhoto.setChatId(update.getMessage().getChatId().toString());
+
 
             try {
                 execute(message); // Call method to send the message
