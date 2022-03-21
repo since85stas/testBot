@@ -1,6 +1,7 @@
 package commands;
 
 import messages.MessageMy;
+import messages.MiauMessage;
 import messages.StartMessage;
 
 import java.util.Map;
@@ -44,7 +45,7 @@ public class Commands {
             } else if (descr.equals("\\commands")) {
                 commands.put(descr, new StartMessage());
             } else if (descr.equals("\\мяу")) {
-
+                commands.put(descr, new MiauMessage());
             }
         }
     }
