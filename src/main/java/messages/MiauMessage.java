@@ -24,7 +24,7 @@ public class MiauMessage extends MessageMy {
     }
 
     private File[] getPhotosList() {
-        File f = new File("/photo"); // current directory
+        File f = new File("./photo/"); // current directory
 
         File[] files = f.listFiles();
         return files;

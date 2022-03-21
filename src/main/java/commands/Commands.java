@@ -15,6 +15,14 @@ public class Commands {
     
     private Map<String, String> commandsDescr = new TreeMap<String, String>();
 
+    public MessageMy checkCommand(String key) {
+        if (commands.containsKey(key)) {
+            return commands.get(key);
+        } else {
+            return null;
+        }
+    }
+
     public static Commands getInstance() {
         if (instance == null) {
             instance = new Commands();
@@ -30,21 +38,21 @@ public class Commands {
     }
     
     private void addCommandsDescr() {
-        commandsDescr.put("\\start", "Приветствие");
-        commandsDescr.put("\\commands", "Узнать список команд");
-        commandsDescr.put("\\мяу", "");
-        commandsDescr.put("\\бяу", "");
-        commandsDescr.put("\\беляу", "");
+        commandsDescr.put("/start", "Приветствие");
+        commandsDescr.put("/commands", "Узнать список команд");
+        commandsDescr.put("/мяу", "");
+        commandsDescr.put("/бяу", "");
+        commandsDescr.put("/беляу", "");
     }
 
     private void addCommands() {
         for (String descr: commandsDescr.keySet()
              ) {
-            if (descr.equals("\\start")) {
+            if (descr.equals("/start")) {
                 commands.put(descr, new StartMessage());
-            } else if (descr.equals("\\commands")) {
+            } else if (descr.equals("/commands")) {
                 commands.put(descr, new StartMessage());
-            } else if (descr.equals("\\мяу")) {
+            } else if (descr.equals("/мяу")) {
                 commands.put(descr, new MiauMessage());
             }
         }
