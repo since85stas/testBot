@@ -2,6 +2,8 @@ package messages;
 
 import commands.Commands;
 
+import java.io.File;
+
 public class StartMessage extends MessageMy{
 
     public StartMessage() {
@@ -20,5 +22,10 @@ public class StartMessage extends MessageMy{
         Commands commands = Commands.getInstance();
         builder.append(commands.getCommandsDescrString());
         return builder.toString();
+    }
+
+    @Override
+    public File getPhotoFile() {
+        return null;
     }
 }

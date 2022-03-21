@@ -8,4 +8,6 @@ public class Messages {
         StartMessage message = new StartMessage();
         return message.getMessageText();
     }
+
+
 }
