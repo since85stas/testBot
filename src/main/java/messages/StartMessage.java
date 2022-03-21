@@ -4,6 +4,9 @@ import commands.Commands;
 
 public class StartMessage extends MessageMy{
 
+    public StartMessage() {
+        super();
+    }
 
     @Override
     public String getMessageText() {
