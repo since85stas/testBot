@@ -42,7 +42,6 @@ public class Commands {
         commandsDescr.put("/commands", "Узнать список команд");
         commandsDescr.put("/мяу", "");
         commandsDescr.put("/бяу", "");
-        commandsDescr.put("/беляу", "");
     }
 
     private void addCommands() {
@@ -53,6 +52,8 @@ public class Commands {
             } else if (descr.equals("/commands")) {
                 commands.put(descr, new StartMessage());
             } else if (descr.equals("/мяу")) {
+                commands.put(descr, new MiauMessage());
+            } else if (descr.equals("/бяу")) {
                 commands.put(descr, new MiauMessage());
             }
         }

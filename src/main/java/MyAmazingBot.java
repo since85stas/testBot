@@ -27,9 +27,9 @@ public class MyAmazingBot extends TelegramLongPollingBot {
         Commands commands = Commands.getInstance();
 
         MessageMy mess = commands.checkCommand(update.getMessage().getText());
+        SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
+        message.setChatId(update.getMessage().getChatId().toString());// Create a SendMessage object with mandatory fields
         if (mess != null) {
-            SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
-            message.setChatId(update.getMessage().getChatId().toString());
             message.setText(mess.getMessageText());
             try {
                 execute(message); // Call method to send the message
@@ -53,8 +53,6 @@ public class MyAmazingBot extends TelegramLongPollingBot {
             }
 
         } else {
-            SendMessage message = new SendMessage(); // Create a SendMessage object with mandatory fields
-            message.setChatId(update.getMessage().getChatId().toString());
             message.setText("К сожалению такого я еще не умею");
             try {
                 execute(message); // Call method to send the message
